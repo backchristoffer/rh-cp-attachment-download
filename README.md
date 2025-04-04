@@ -30,6 +30,11 @@ pipenv run python app.py \
   --dir ./attachments
 ```
 
+Example: cases.txt
+```bash
+123456,234567,345678
+```
+
 ## Run Options
 
 ### Using Python directly:
