@@ -22,7 +22,7 @@ jobs:
         
     - uses: actions/checkout@v3
     - name: Build the Docker image and push to github
-      run: docker build . --file Containerfile --tag attachment-download:latest
+      run: docker build . --file Dockerfile --tag attachment-download:latest
     - name: Tag image
       run: docker image tag attachment-download:latest ghcr.io/backchristoffer/attachment-download:latest
     - name: Push image to github
