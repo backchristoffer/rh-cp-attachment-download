@@ -13,11 +13,11 @@ You can either use a `.env` file or pass parameters directly when running the sc
 Create a `.env` file like this:
 
 ```env
-OFFTOKEN=your_offline_token_here
-CASE_NUMBERS=123456,234567,345678
+OFFTOKEN="your_offline_token_here"
+CASE_NUMBERS="123456,234567,345678"
 # Or use a file:
-# CASE_FILE_PATH=./cases.txt
-DOWNLOAD_DIR=./attachments
+# CASE_FILE_PATH="./cases.txt"
+DOWNLOAD_DIR="./attachments"
 ```
 
 ### Option 2: Using command-line arguments
