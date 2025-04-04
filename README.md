@@ -20,20 +20,33 @@ CASE_NUMBERS="123456,234567,345678"
 DOWNLOAD_DIR="./attachments"
 ```
 
-### Option 2: Using command-line arguments
+### Option 2: Pass environment variables directly (no .env needed)
 
-You can provide the same information as flags:
 ```bash
-pipenv run python app.py \
-  --token your_access_token \
-  --file cases.txt \
-  --dir ./attachments
+podman run --rm \
+  -e OFFTOKEN="your_offline_token_here" \
+  -e CASE_FILE_PATH="./cases.txt" \
+  -e DOWNLOAD_DIR="./attachments" \
+  -v $(pwd)/cases.txt:/app/cases.txt:ro \
+  -v $(pwd)/attachments:/app/attachments \
+  ghcr.io/backchristoffer/attachment-download:latest
 ```
 
-Example: cases.txt
+## Running from GitHub Container Registry
+
+You can run the container directly from the public registry:
+
 ```bash
-123456,234567,345678
+podman run --rm \
+  -e OFFTOKEN="your_offline_token_here" \
+  -e CASE_FILE_PATH="./cases.txt" \
+  -e DOWNLOAD_DIR="./attachments" \
+  -v $(pwd)/cases.txt:/app/cases.txt:ro \
+  -v $(pwd)/attachments:/app/attachments \
+  ghcr.io/backchristoffer/attachment-download:latest
 ```
+
+This requires no local build and pulls the latest image from GHCR.
 
 ## Run Options
 
@@ -44,7 +57,7 @@ pipenv install
 pipenv run python app.py
 ```
 
-### Using Podman:
+### Using Podman with local build:
 
 Build the image:
 ```bash
@@ -61,5 +74,5 @@ podman run --rm \
 
 ## Input Options
 - Use `CASE_NUMBERS` in `.env` (comma-separated)
-- Or use `CASE_FILE_PATH` to point to a file
-- Or provide `--token`, `--file`, and `--dir` as parameters
+- Or use `CASE_FILE_PATH` to point to a file (comma-separated, no quotes)
+
