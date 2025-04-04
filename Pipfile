@@ -5,3 +5,7 @@ name = "pypi"
 
 [packages]
 requests = "*"
+python-dotenv = "*"
+
+[requires]
+python_version = "3"
