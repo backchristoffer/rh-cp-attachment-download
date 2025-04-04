@@ -35,9 +35,10 @@ podman run --rm \
 ## Running from GitHub Container Registry
 
 You can run the container directly from the public registry:
-
+EXAMPLE WITH --privileged !! 
+We're adding PYTHONUNBUFFERED=1 to get some kind of "progress" bar.
 ```bash
-podman run --rm \
+podman run --rm --privileged -e PYTHONUNBUFFERED=1 \
   -e OFFTOKEN="your_offline_token_here" \
   -e CASE_FILE_PATH="./cases.txt" \
   -e DOWNLOAD_DIR="./attachments" \
