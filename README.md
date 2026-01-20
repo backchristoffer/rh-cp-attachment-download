@@ -1,6 +1,7 @@
 # Red Hat Support Case Attachment Download EXAMPLE - NOT OFFICIALLY SUPPORTED - DEMO - EXAMPLE
 
-This tool downloads attachments from Red Hat support cases using the Red Hat Customer Portal API.
+This repo is to show how you could use python to download attachments from Red Hat support cases using the Red Hat Customer Portal API - Please keep in mind that this is a demo only. It is to be an example of how one would go about using Red Hat APIs
+
 
 ## Setup
 
