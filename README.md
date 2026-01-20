@@ -1,4 +1,4 @@
-# Red Hat Support Case Attachment Downloader
+# Red Hat Support Case Attachment Download EXAMPLE - NOT OFFICIALLY SUPPORTED - DEMO - EXAMPLE
 
 This tool downloads attachments from Red Hat support cases using the Red Hat Customer Portal API.
 
